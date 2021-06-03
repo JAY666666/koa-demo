@@ -13,6 +13,16 @@ class Mysql {
 
     }
 
+    login(data) {
+        return new Promise((resolve,reject) => {
+            connection.query('SELECT * from login where phone=? and password=?', [data.phone,data.password], (error,results,fields) => {
+                if(error) {
+                    reject(error)
+                }
+                resolve(results)
+            })
+        })
+    }
     getUserInfo() {
         return new Promise((resolve,reject) => {
             connection.query('SELECT * from user', (error,results,fields) => {
