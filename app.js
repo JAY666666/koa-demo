@@ -32,7 +32,7 @@ router.post("/login", async (ctx) => {
     return (ctx.body = {
       code: "2",
       data: null,
-      message: "参数不合法",
+      msg: "参数不合法",
     });
   }
   const result = await mysql.login({
@@ -57,7 +57,7 @@ router.post("/login", async (ctx) => {
     });
   } else {
     return (ctx.body = {
-      code: "000002",
+      code: "2",
       data: null,
       msg: "用户名或密码错误",
     });
