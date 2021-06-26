@@ -6,7 +6,6 @@ const login = {};
 
 // 登录方法
 login.login = async (ctx) => {
-    debugger;
   const data = ctx.request.body;
   if (!data.phone || !data.password) {
     return (ctx.body = {
